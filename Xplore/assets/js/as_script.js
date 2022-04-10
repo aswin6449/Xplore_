@@ -1,5 +1,5 @@
 let directionsService, directionsRenderer;
-var position = [11.000630728264372, 77.0001989377071];
+var position = [10.937053504205005, 76.95575398672943];
 function initMap() {
   var latlng = new google.maps.LatLng(position[0], position[1]);
   directionsService = new google.maps.DirectionsService();
@@ -29,8 +29,27 @@ function initMap() {
         '</div>' +
         '<div class="iw-bottom-gradient"></div>' +
         '</div>',
-        10.936772841537431,
-        76.95581134395441,
+        11.000630728264372,
+        77.0001989377071,
+        "/Xplore_Ashwin/Xplore/Images/star.svg",
+        60,
+        60
+      ],
+      [
+        '<div id="iw-container">' +
+        '<div class="iw-title1">Hurray - Level 1 UP</div>' +
+        '<div class="iw-title2">First Destination - Amrita College</div>' +
+        '<div class="iw-content">' +
+        '<div class="iw-subTitle">History</div>' +
+
+        '<p>The first to be established was the Coimbatore campus in 1994, with the opening of Amrita School of Engineering at Ettimadai, a village about 20 km east of the Coimbatore city. Amrita Institute of Medical Sciences (AIMS) in Edapally, Kochi was inaugurated on 17 May 1998 by the then Prime Minister, Atal Bihari Vajpayee.</p>' +
+        '<div class="iw-subTitle">Location</div>' +
+        '<p>Amritanagar, Ettimadai, Tamil Nadu 641112<br>' +
+        '</p>' +
+        '</div>' +
+        '<div class="iw-bottom-gradient"></div>' +
+        '</div>',
+        10.937053504205005, 76.95575398672943,
         "/Xplore_Ashwin/Xplore/Images/star.svg",
         60,
         60
@@ -89,8 +108,7 @@ function initMap() {
         '</div>' +
         '<div class="iw-bottom-gradient"></div>' +
         '</div>',
-        10.977026621053987,
-        76.91974964611255,
+        10.970421, 76.910928,
         "/Xplore_Ashwin/Xplore/Images/star.svg",
         60,
         60
@@ -150,7 +168,7 @@ function initMap() {
 
   directionsRenderer.setMap(map);
   navigator.geolocation.getCurrentPosition((pos) => {
-    calculateAndDisplayRoute(directionsService, directionsRenderer, { lat: pos.coords.latitude, lng: pos.coords.longitude });
+    calculateAndDisplayRoute(directionsService, directionsRenderer, { lat: 10.936772841537431, lng: 76.95581134395441 });
 
     markers[0][1] = pos.coords.latitude;
     markers[0][2] = pos.coords.longitude;
@@ -233,7 +251,7 @@ function initMap() {
 function calculateAndDisplayRoute(directionsService, directionsRenderer, origin = { lat: 10.936772841537431, lng: 76.95581134395441 }) {
   directionsService
     .route({
-      origin: origin,
+      origin: { lat: 10.936772841537431, lng: 76.95581134395441 },
       destination: { lat: 10.97655994561818, lng: 76.73679195318847 },
       travelMode: google.maps.TravelMode.DRIVING,
     })
